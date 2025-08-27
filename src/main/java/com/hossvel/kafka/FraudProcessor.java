@@ -24,7 +24,7 @@ public class FraudProcessor {
     @Channel("high-risk-alerts-out")
     Emitter<HighRiskAccountWasDetected> highRiskEmitter;
 
-    @Incoming("bank-transactions")
+    @Incoming("bank-transactions-in")
     public CompletionStage<Void> sendEventNotifications(Message<BankTransaction> message){
         BankTransaction event = message.getPayload();
 
